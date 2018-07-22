@@ -3,7 +3,7 @@
 #include <sys/param.h>
 #include "addition.h"
 
-#define MAX_DIGITS  4
+#define ABS(x)  ((x) <= 0 ? (x) : -(x))
 
 char *add(char* first, char* second)
 {
@@ -14,7 +14,7 @@ char *add(char* first, char* second)
     char *firstPtr = first + len1 - 1;
     char *secondPtr = second + len2 - 1;
 
-    char *addition = malloc(maxLen + 1);
+    char *addition = malloc(maxLen + 1 + ABS(len1 - len2));
     char *additionPtr = addition;
 
     memset(addition, 0, maxLen);
