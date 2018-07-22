@@ -14,6 +14,12 @@ TEST_TEAR_DOWN(AdditionCode)
 {
 }
 
+TEST(AdditionCode, Reverse)
+{
+    char reverse[] = "hello";
+    TEST_ASSERT_EQUAL_STRING("olleh", strrev(reverse));
+}
+
 TEST(AdditionCode, SameSize2)
 {
     TEST_ASSERT_EQUAL_STRING("46", add("12", "34"));
@@ -58,3 +64,4 @@ TEST(AdditionCode, CarryOver5)
 {
     TEST_ASSERT_EQUAL_STRING("1887", add("888", "999"));
 }
+

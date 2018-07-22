@@ -1,21 +1,22 @@
 #include <string.h>
 #include <stdlib.h>
 #include <sys/param.h>
+
 #include "addition.h"
 
-#define ABS(x)  ((x) <= 0 ? (x) : -(x))
+#define ABS(x)  ((x) <= 0 ? -(x) : (x))
 
-char *add(char* first, char* second)
+char *add(char *first, char *second)
 {
     size_t len1 = strlen(first);
     size_t len2 = strlen(second);
     int maxLen = MAX(len1, len2);
 
-    char *firstPtr = first + len1 - 1;
-    char *secondPtr = second + len2 - 1;
-
     char *addition = malloc(maxLen + 1 + ABS(len1 - len2));
     char *additionPtr = addition;
+
+    char *firstPtr = first + len1 - 1;
+    char *secondPtr = second + len2 - 1;
 
     memset(addition, 0, maxLen);
 
@@ -41,7 +42,7 @@ char *add(char* first, char* second)
 
     if(carry)
     {
-        *additionPtr++ = 1 + '0';
+        *additionPtr++ = '1';
     }
 
     while(firstPtr >= first) {
@@ -57,19 +58,17 @@ char *add(char* first, char* second)
     return(additionPtr);
 }
 
-char *strrev(char* string)
+char *strrev(char *string)
 {
+    char *startPtr = string;
     size_t len = strlen(string);
-    char *rev = malloc(len + 1);
-    char* revPtr = rev;
+    char *endPtr = string + len - 1;
 
-    memset(rev, 0, len + 1);
-
-    char *stringPtr = string + len - 1;
-
-    while(stringPtr >= string)
+    while(endPtr >= startPtr)
     {
-        *revPtr++ = *stringPtr--;
+        char c = *startPtr;
+        *startPtr++ = *endPtr;
+        *endPtr-- = c;
     }
-    return(rev);
+    return(string);
 }

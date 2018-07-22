@@ -3,6 +3,8 @@
 
 TEST_GROUP_RUNNER(AdditionCode)
 {
+    RUN_TEST_CASE(AdditionCode, Reverse);
+
     RUN_TEST_CASE(AdditionCode, SameSize2);
     RUN_TEST_CASE(AdditionCode, SameSize3);
 
