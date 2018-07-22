@@ -10,7 +10,7 @@ char *add(char *first, char *second)
 {
     size_t len1 = strlen(first);
     size_t len2 = strlen(second);
-    int maxLen = MAX(len1, len2);
+    size_t maxLen = MAX(len1, len2);
 
     char *addition = malloc(maxLen + 1 + ABS(len1 - len2));
     char *additionPtr = addition;
@@ -20,12 +20,12 @@ char *add(char *first, char *second)
 
     memset(addition, 0, maxLen);
 
-    int carry = 0;
+    char carry = 0;
     while((firstPtr >= first) && (secondPtr >= second))
     {
-        int num1 = *firstPtr + carry - '0';
-        int num2 = *secondPtr - '0';
-        int sum = num1 + num2;
+        char num1 = *firstPtr + carry - '0';
+        char num2 = *secondPtr - '0';
+        char sum = num1 + num2;
 
         if(sum >= 10)
         {
@@ -56,19 +56,4 @@ char *add(char *first, char *second)
     *additionPtr = 0;
     additionPtr = strrev(addition);
     return(additionPtr);
-}
-
-char *strrev(char *string)
-{
-    char *startPtr = string;
-    size_t len = strlen(string);
-    char *endPtr = string + len - 1;
-
-    while(endPtr >= startPtr)
-    {
-        char c = *startPtr;
-        *startPtr++ = *endPtr;
-        *endPtr-- = c;
-    }
-    return(string);
 }
