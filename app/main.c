@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "addition.h"
+#include "arith.h"
 
 int main(int argc, char **argv)
 {

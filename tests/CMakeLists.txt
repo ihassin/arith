@@ -15,7 +15,9 @@ set(SOURCE_FILES
     unity/unity_internals.h
     all_tests.c
         TestAddition_Runner.c
-        TestAddition.c)
+        TestSubstraction_Runner.c
+        TestAddition.c
+        TestSubstraction.c)
 
 include_directories(.)
 include_directories(unity)

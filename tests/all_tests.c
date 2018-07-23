@@ -3,6 +3,7 @@
 static void RunAllTests(void)
 {
   RUN_TEST_GROUP(AdditionCode);
+  RUN_TEST_GROUP(SubstractionCode);
 }
 
 int main(int argc, const char * argv[])

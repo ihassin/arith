@@ -2,7 +2,7 @@
 #include "unity.h"
 #include "unity_fixture.h"
 
-#include "addition.h"
+#include "arith.h"
 
 TEST_GROUP(AdditionCode);
 

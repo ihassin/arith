@@ -1,6 +1,6 @@
 #include <string.h>
 
-#include "addition.h"
+#include "arith.h"
 
 char *strrev(char *string)
 {
