@@ -24,6 +24,11 @@ TEST(SubstractionCode, SameSize2)
     TEST_ASSERT_EQUAL_STRING("2", substract("2", "4"));
 }
 
+TEST(SubstractionCode, SameSize3)
+{
+    TEST_ASSERT_EQUAL_STRING("51", substract("791", "842"));
+}
+
 TEST(SubstractionCode, DiffSize1)
 {
     TEST_ASSERT_EQUAL_STRING("454", substract("12", "466"));
